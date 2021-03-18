@@ -1,6 +1,6 @@
 package academy.belhard.entity;
 
-public class Planes {
+public class Plane {
 
     private int id;
     private String mark;
@@ -8,7 +8,7 @@ public class Planes {
     private int passengers;
     private String tailNumber;
 
-    public Planes(int id, String mark, String model, int passengers, String tailNumber) {
+    public Plane(int id, String mark, String model, int passengers, String tailNumber) {
         this.id = id;
         this.mark = mark;
         this.model = model;

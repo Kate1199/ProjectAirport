@@ -1,0 +1,28 @@
+CREATE DATABASE airport_db;
+USE airport_db;
+CREATE TABLE pilots(
+id INT AUTO_INCREMENT NOT NULL,
+first_name VARCHAR(30) NOT NULL,
+last_name VARCHAR(50) NOT NULL,
+rang VARCHAR(50) NOT NULL,
+pilot_kod VARCHAR(30) NOT NULL UNIQUE,
+PRIMARY KEY(id));
+
+CREATE TABLE planes(
+id INT AUTO_INCREMENT NOT NULL,
+mark VARCHAR(50) NOT NULL,
+model VARCHAR(20) NOT NULL,
+passengers INT NOT NULL,
+tail_number VARCHAR(20) NOT NULL UNIQUE,
+PRIMARY KEY(id)); 
+
+CREATE TABLE flights(
+id INT AUTO_INCREMENT NOT NULL,
+plane_id INT,
+pilot_id INT,
+date_of_flight DATE NOT NULL,
+time_of_flight TIME NOT NULL,
+flight_number VARCHAR(20) NOT NULL,
+PRIMARY KEY(id),
+FOREIGN KEY(plane_id) REFERENCES planes (id),
+FOREIGN KEY(pilot_id) REFERENCES pilots (id));
