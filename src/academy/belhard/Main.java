@@ -42,5 +42,6 @@ public class Main {
 
         List<Result> results = ResultDbReader.read();
         Writer.write(results, FileNames.resultFile);
+
     }
 }
